@@ -108,7 +108,7 @@ export default function Sidebar({
                 </svg>
               </motion.div>
               <span className="text-xl font-medium text-white tracking-wide">
-                NOIR
+                Bearly AI
               </span>
             </motion.div>
           </div>

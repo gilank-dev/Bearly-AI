@@ -65,7 +65,7 @@ export async function POST(request: NextRequest) {
         'Content-Type': 'application/json',
         'Authorization': `Bearer ${OPENROUTER_API_KEY}`,
         'HTTP-Referer': process.env.NEXT_PUBLIC_SITE_URL || 'http://localhost:3000',
-        'X-Title': 'NOIR AI Chatbot',
+        'X-Title': 'Bearly AI',
       },
       body: JSON.stringify({ model, messages, stream: true }),
     })

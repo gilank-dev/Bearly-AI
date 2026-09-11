@@ -579,7 +579,7 @@ export default function Home() {
                   How can I help you today?
                 </h1>
                 <p className="text-gray-500 text-sm sm:text-base mb-12">
-                  I&apos;m NOIR, your AI assistant. Ask me anything.
+                  I&apos;m Bearly AI, your AI assistant. Ask me anything.
                 </p>
 
                 {/* Suggestion Grid - ChatGPT Style */}
@@ -652,7 +652,7 @@ export default function Home() {
                       </div>
                       <div className="flex-1">
                         <div className="text-xs font-semibold text-gray-500 mb-2 uppercase tracking-wide">
-                          NOIR
+                          Bearly AI
                         </div>
                         <div className="flex gap-1.5">
                           <div className="w-2 h-2 rounded-full bg-white/40 typing-dot" />
@@ -695,7 +695,7 @@ export default function Home() {
                     data-testid="chat-input"
                     value={input}
                     onChange={e => setInput(e.target.value)}
-                    placeholder="Message NOIR..."
+                    placeholder="Message Bearly AI..."
                     disabled={isLoading || hasExceededLimit || !!(userUsage && userUsage.tier !== 'admin' && userUsage.dailyLimit !== -1 && userUsage.tokensUsedToday >= userUsage.dailyLimit)}
                     rows={1}
                     className="flex-1 bg-transparent text-white placeholder-gray-500 focus:outline-none disabled:opacity-50 disabled:cursor-not-allowed resize-none text-sm sm:text-[15px] leading-relaxed"
@@ -751,7 +751,7 @@ export default function Home() {
 
               {/* Footer Text */}
               <p className="text-xs text-gray-600 text-center mt-3">
-                NOIR can make mistakes. Consider checking important information.
+                Bearly AI can make mistakes. Consider checking important information.
               </p>
             </form>
           </div>

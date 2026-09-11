@@ -2,7 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
-/* NOIR - Evolution Color System (Monochrome Premium) */
+/* Bearly AI - Evolution Color System (Monochrome Premium) */
 :root {
   --background: #0A0A0A;
   --surface: #111111;
@@ -68,7 +68,7 @@ body {
   }
 }
 
-/* Glass morphism effect - NOIR style */
+/* Glass morphism effect - Bearly AI style */
 .glass {
   background: rgba(22, 22, 22, 0.6);
   backdrop-filter: blur(24px);
@@ -196,7 +196,7 @@ body {
   animation-delay: 0.4s;
 }
 
-/* Loading shimmer - NOIR style */
+/* Loading shimmer - Bearly AI style */
 .shimmer {
   background: linear-gradient(
     90deg,

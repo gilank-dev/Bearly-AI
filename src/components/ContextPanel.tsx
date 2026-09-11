@@ -220,7 +220,7 @@ export default function ContextPanel({
                       </svg>
                     </div>
                     <div>
-                      <p className="text-sm font-medium text-white">About NOIR</p>
+                      <p className="text-sm font-medium text-white">About Bearly AI</p>
                       <p className="text-xs text-gray-500">Version 1.0</p>
                     </div>
                   </div>
@@ -234,7 +234,7 @@ export default function ContextPanel({
               {/* Footer */}
               <div className="mt-6 pt-4 border-t border-[#1A1A1A]">
                 <p className="text-xs text-gray-600 text-center">
-                  NOIR Evolution © 2024
+                  Bearly AI Evolution © 2024
                 </p>
               </div>
             </div>

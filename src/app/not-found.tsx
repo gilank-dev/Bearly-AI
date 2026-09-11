@@ -1,8 +1,8 @@
 import { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: '404 - Page Not Found - NOIR AI Chatbot',
-  description: 'The page you are looking for does not exist. Return to the NOIR AI Chatbot homepage to start a conversation.',
+  title: '404 - Page Not Found - Bearly AI',
+  description: 'The page you are looking for does not exist. Return to the Bearly AI homepage to start a conversation.',
   robots: {
     index: false,
     follow: false,

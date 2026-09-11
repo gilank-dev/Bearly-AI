@@ -45,7 +45,7 @@ export default function ChatMessage({ message, onCopy, copiedId, onRegenerate, i
           <div className="flex-1 min-w-0">
             {/* Sender Name */}
             <div className="text-xs font-semibold text-gray-500 mb-2 uppercase tracking-wide">
-              {isUser ? 'You' : 'NOIR'}
+              {isUser ? 'You' : 'Bearly AI'}
             </div>
 
             {/* Message Text */}

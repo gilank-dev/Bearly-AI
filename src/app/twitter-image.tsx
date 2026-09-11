@@ -2,7 +2,7 @@ import { ImageResponse } from 'next/og'
 
 export const runtime = 'edge'
 
-export const alt = 'NOIR - AI Chatbot | Premium AI Chatbot'
+export const alt = 'Bearly AI | Premium AI Chatbot'
 export const size = {
   width: 1200,
   height: 630,
@@ -43,7 +43,7 @@ export default async function Image() {
             <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z" />
           </svg>
         </div>
-        <div style={{ fontSize: 56, fontWeight: 700, marginBottom: 12 }}>NOIR</div>
+        <div style={{ fontSize: 56, fontWeight: 700, marginBottom: 12 }}>Bearly AI</div>
         <div style={{ fontSize: 24, color: '#A1A1AA', maxWidth: 600, textAlign: 'center' }}>
           Premium AI Chatbot with monochrome elegance
         </div>

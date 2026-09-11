@@ -1,6 +1,6 @@
 export const metadata = {
-  title: 'Setup Admin - NOIR AI Chatbot',
-  description: 'First-time admin setup for NOIR AI Chatbot. Initialize the admin configuration in your Firebase project.',
+  title: 'Setup Admin - Bearly AI',
+  description: 'First-time admin setup for Bearly AI. Initialize the admin configuration in your Firebase project.',
 }
 
 export default function SetupAdminLayout({

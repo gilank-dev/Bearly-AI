@@ -2,7 +2,7 @@ import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
 import './globals.css'
 
-const inter = Inter({ 
+const inter = Inter({
   subsets: ['latin'],
   weight: ['300', '400', '500', '600'],
   variable: '--font-inter',
@@ -13,13 +13,13 @@ const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://bearly-ai.vercel.ap
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: {
-    default: 'NOIR - AI Chatbot',
-    template: '%s | NOIR - AI Chatbot',
+    default: 'Bearly AI — Asisten AI Percakapan',
+    template: '%s | Bearly AI',
   },
-  description: 'Premium AI Chatbot with monochrome elegance and multi-model support.',
-  keywords: ['AI Chatbot', 'NOIR', 'OpenRouter', 'GPT-3.5', 'Llama 3', 'Qwen', 'AI Assistant'],
-  authors: [{ name: 'NOIR Team' }],
-  creator: 'NOIR Team',
+  description: 'Bearly AI: asisten percakapan AI eksperimental dengan dukungan multi-model. Proyek belajar dan eksplorasi, bukan layanan komersial.',
+  keywords: ['AI Chatbot', 'Bearly AI', 'OpenRouter', 'Llama 3', 'Qwen', 'AI Assistant', 'proyek belajar'],
+  authors: [{ name: 'Gilank (Lankdev)' }],
+  creator: 'Gilank (Lankdev)',
   icons: {
     icon: '/favicon.ico',
     apple: '/favicon.ico',
@@ -28,25 +28,25 @@ export const metadata: Metadata = {
     canonical: '/',
   },
   openGraph: {
-    title: 'NOIR - AI Chatbot',
-    description: 'Premium AI Chatbot with monochrome elegance and multi-model support.',
+    title: 'Bearly AI — Asisten AI Percakapan',
+    description: 'Asisten percakapan AI eksperimental dengan dukungan multi-model. Proyek belajar oleh Gilank (Lankdev).',
     url: siteUrl,
-    siteName: 'NOIR AI Chatbot',
-    locale: 'en_US',
+    siteName: 'Bearly AI',
+    locale: 'id_ID',
     type: 'website',
     images: [
       {
         url: '/opengraph-image',
         width: 1200,
         height: 630,
-        alt: 'NOIR - AI Chatbot',
+        alt: 'Bearly AI — Asisten AI Percakapan',
       },
     ],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'NOIR - AI Chatbot',
-    description: 'Premium AI Chatbot with monochrome elegance and multi-model support.',
+    title: 'Bearly AI — Asisten AI Percakapan',
+    description: 'Asisten percakapan AI eksperimental dengan dukungan multi-model. Proyek belajar oleh Gilank (Lankdev).',
     images: ['/opengraph-image'],
   },
   robots: {
@@ -55,46 +55,20 @@ export const metadata: Metadata = {
   },
 }
 
+export const viewport = {
+  width: 'device-width',
+  initialScale: 1,
+  themeColor: '#0a0a0a',
+}
+
 export default function RootLayout({
   children,
-}: {
+}: Readonly<{
   children: React.ReactNode
-}) {
-  const jsonLd = {
-    '@context': 'https://schema.org',
-    '@type': 'SoftwareApplication',
-    name: 'NOIR - AI Chatbot',
-    operatingSystem: 'Web',
-    applicationCategory: 'MultimediaApplication',
-    offers: {
-      '@type': 'Offer',
-      price: '0',
-      priceCurrency: 'USD',
-    },
-    description: 'Premium AI Chatbot playground powered by OpenRouter with multi-model support, real-time streaming, and monochrome design.',
-    url: siteUrl,
-  }
-
-  const websiteJsonLd = {
-    '@context': 'https://schema.org',
-    '@type': 'WebSite',
-    name: 'NOIR - AI Chatbot',
-    url: siteUrl,
-  }
-
+}>) {
   return (
-    <html lang="en" className={inter.variable}>
-      <head>
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteJsonLd) }}
-        />
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-        />
-      </head>
-      <body className={`${inter.className} antialiased`}>{children}</body>
+    <html lang="id" className={inter.variable}>
+      <body className="font-sans antialiased bg-background text-foreground">{children}</body>
     </html>
   )
 }

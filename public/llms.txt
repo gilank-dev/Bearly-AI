@@ -1,17 +1,17 @@
-# LLMs.txt - NOIR AI Chatbot
+# LLMs.txt - Bearly AI
 
 ## Project Identification
 
 - Project: Bearly-AI
-- App Name: NOIR
-- Tagline: "NOIR - AI Chatbot"
+- App Name: Bearly AI
+- Tagline: "Bearly AI"
 - Repository: https://github.com/gilank-dev/Bearly-AI
 - Live Demo: https://bearly-ai.vercel.app
 - Version: 1.0.0
 
 ## Overview
 
-NOIR is a Next.js (App Router / React 18 / TypeScript) AI chatbot playground. It is a client-side React application that streams responses from OpenRouter's chat completion API.
+Bearly AI is a Next.js (App Router / React 18 / TypeScript) AI chatbot playground. It is a client-side React application that streams responses from OpenRouter's chat completion API.
 
 It is NOT a static site generator template. It is an interactive web app that requires environment configuration to operate.
 
@@ -27,7 +27,7 @@ It is NOT a static site generator template. It is an interactive web app that re
 | Backend API  | Next.js Route Handler (`/api/chat`)|
 | AI Gateway   | OpenRouter API (`https://openrouter.ai/api/v1/chat/completions`) |
 | Deployment   | Vercel (static pages + Node.js serverless for API route) |
-| Styling      | Tailwind CSS with custom NOIR monochrome theme (#0A0A0A, #161616) |
+| Styling      | Tailwind CSS with custom Bearly AI monochrome theme (#0A0A0A, #161616) |
 
 ## Environment Configuration (Required)
 
