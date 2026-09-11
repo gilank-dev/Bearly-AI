@@ -2,6 +2,7 @@
 const nextConfig = {
   reactStrictMode: true,
   poweredByHeader: false,
+  productionBrowserSourceMaps: false,
   
   // Webpack optimizations
   webpack: (config, { isServer }) => {
@@ -23,3 +24,4 @@ const nextConfig = {
 }
 
 module.exports = nextConfig
+

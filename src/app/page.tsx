@@ -579,7 +579,7 @@ export default function Home() {
                   How can I help you today?
                 </h1>
                 <p className="text-gray-500 text-sm sm:text-base mb-12">
-                  I'm NOIR, your AI assistant. Ask me anything.
+                  I&apos;m NOIR, your AI assistant. Ask me anything.
                 </p>
 
                 {/* Suggestion Grid - ChatGPT Style */}

@@ -1,0 +1,93 @@
+# LLMs.txt - NOIR AI Chatbot
+
+## Project Identification
+
+- Project: Bearly-AI
+- App Name: NOIR
+- Tagline: "NOIR - AI Chatbot"
+- Repository: https://github.com/gilank-dev/Bearly-AI
+- Live Demo: https://bearly-ai.vercel.app
+- Version: 1.0.0
+
+## Overview
+
+NOIR is a Next.js (App Router / React 18 / TypeScript) AI chatbot playground. It is a client-side React application that streams responses from OpenRouter's chat completion API.
+
+It is NOT a static site generator template. It is an interactive web app that requires environment configuration to operate.
+
+## Architecture
+
+| Layer        | Technology                          |
+|--------------|-------------------------------------|
+| Framework    | Next.js 14.1 (App Router)           |
+| UI           | React 18.2, Tailwind CSS 3.4        |
+| Animation    | Framer Motion 11                  |
+| Auth         | Firebase Authentication (Google)    |
+| Database     | Firebase Firestore               |
+| Backend API  | Next.js Route Handler (`/api/chat`)|
+| AI Gateway   | OpenRouter API (`https://openrouter.ai/api/v1/chat/completions`) |
+| Deployment   | Vercel (static pages + Node.js serverless for API route) |
+| Styling      | Tailwind CSS with custom NOIR monochrome theme (#0A0A0A, #161616) |
+
+## Environment Configuration (Required)
+
+Copy `.env.example` to `.env.local` and provide:
+
+| Variable                          | Purpose                                     |
+|-----------------------------------|---------------------------------------------|
+| `OPENROUTER_API_KEY`              | Secret OpenRouter API key (server-side only)|
+| `NEXT_PUBLIC_FIREBASE_API_KEY`    | Firebase public API key                     |
+| `NEXT_PUBLIC_FIREBASE_AUTH_DOMAIN`| Firebase Auth domain                        |
+| `NEXT_PUBLIC_FIREBASE_PROJECT_ID` | Firebase project ID                         |
+| `NEXT_PUBLIC_FIREBASE_STORAGE_BUCKET` | Firebase storage bucket             |
+| `NEXT_PUBLIC_FIREBASE_MESSAGING_SENDER_ID` | Firebase sender ID              |
+| `NEXT_PUBLIC_FIREBASE_APP_ID`     | Firebase app ID                             |
+| `NEXT_PUBLIC_SITE_URL`            | Deployed site URL (for OG tags, Referer)   |
+
+## Routes
+
+| Route            | Type       | Auth Required        | Description                                  |
+|------------------|------------|----------------------|----------------------------------------------|
+| `/`             | Static Page| Yes (redirects to login) | Main chat playground                   |
+| `/login`        | Static Page| No                   | Google Sign-In page                          |
+| `/admin`        | Static Page| Yes (admin-only)     | Admin dashboard: user tier management        |
+| `/setup-admin`  | Static Page| Yes (first setup)    | First-time admin configuration               |
+| `/debug`        | Static Page| No                   | Firebase connection diagnostic page          |
+| `/api/chat`     | Dynamic API| No (rate-limited)    | Proxies to OpenRouter streaming completions  |
+
+Rate limiting: In-memory rate limiter on `/api/chat` (10 requests/min/IP).
+
+## Models Supported
+
+Hardcoded in `src/app/page.tsx`:
+
+- `openai/gpt-3.5-turbo` - GPT-3.5 Turbo (Fast & efficient)
+- `stepfun/step-3.5-flash` - Step 3.5 Flash (free)
+- `qwen/qwen-2.5-72b-instruct` - Qwen 2.5 72B (recommended)
+- `google/gemma-2-9b-it` - Gemma 2 9B (lightweight)
+
+## Usage Limits
+
+| Tier    | Daily Token Limit | Notes            |
+|---------|-------------------|------------------|
+| free    | 10,000            | Default new users|
+| premium | 100,000           | Admin upgrade    |
+| admin   | unlimited (-1)    | Set by admin     |
+
+Limits reset at UTC day boundary (`lastResetDate` tracking in Firestore).
+
+## Security Notes
+
+- Firebase config is public by design (NEXT_PUBLIC_* env vars).
+- `OPENROUTER_API_KEY` is server-side only (used in `/api/chat` route handler).
+- Firestore Security Rules govern user data access (`firestore.rules`).
+- Admin access is controlled via `config/admin` Firestore document (`adminEmails` array).
+- Rate limiting on chat API is in-memory and NOT suitable for multi-instance production; use Upstash Redis or similar for production.
+
+## Known Limitations / Development Notes
+
+- In-memory rate limiter (`middleware.ts`) does not persist across serverless invocations; treat as dev-only.
+- `firebase.ts` uses `proces...KEY` placeholder for `apiKey` env var name (obfuscated placeholder).
+- The `/test` page is a dev diagnostic page; it is included in the build but serves no user-facing purpose.
+- `ModelChips.tsx` component is defined but NOT imported/used anywhere in the current codebase.
+- No markdown rendering / syntax highlighting library is currently integrated.
